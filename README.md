@@ -17,7 +17,9 @@ Hobby 3D rendering engine written in Rust and Vulkan (Ash bindings).
 Used as a personal workbench for exploring various topics and ideas related to 3D Computer Graphics (3DCG) and the Vulkan API.
 It uses a render graph design for recording command buffers, an ECS design for managing objects in a scene, and Dear ImGui for the GUI.
 
-I strongly recommend checking out this project's [README](https://github.com/NeonSky/vulkan-renderer) for further details, visuals, and a list of supported features.
+This project is currently under active development.
+Once it becomes publicly available, I would strongly recommend checking out the project's [README](https://github.com/NeonSky/vulkan-renderer) for further details, visuals, and a list of supported features.
+For now though, I would recommend reaching out to me personally for any questions.
 
 ![](images/vulkan_renderer2.png)
 ![](images/vulkan_renderer3.png)
@@ -27,7 +29,7 @@ I strongly recommend checking out this project's [README](https://github.com/Neo
 &nbsp;
 ## [Improving the Accuracy of FFT-based GPGPU Ocean Surface Simulations](https://github.com/NeonSky/master-thesis)
 
-![](images/master_thesis.png)
+![](images/master_thesis.gif)
 
 Master's thesis in computer science and engineering.
 A paper that demonstrates how latency-induced simulation errors, present in current state-of-the-art real-time interactive ocean simulations (due to asynchronous GPU readbacks), can be avoided without hurting performance.
@@ -40,6 +42,7 @@ Additionally, Python was used for report-related data analysis and a C#/Unity pr
 
 The simulation itself is quite math-heavy and utilizes Digital Signal Processors (DSP) theory to a great extent in order to derive the Fourier transforms needed to continously convert the ocean between frequency space (for efficient animation) and world space (for user perception).
 
+![](images/master_thesis.png)
 ![](images/master_thesis2.png)
 ![](images/master_thesis3.png)
 ![](images/master_thesis4.png)
