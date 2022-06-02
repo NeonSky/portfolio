@@ -16,7 +16,8 @@ The title of each project links to further details, which usually implies source
 Hobby 3D rendering engine written in Rust and Vulkan (Ash bindings).
 Used as a personal workbench for exploring various topics and ideas related to 3D Computer Graphics (3DCG) and the Vulkan API.
 It uses a render graph design for recording command buffers, an ECS design for managing objects in a scene, and Dear ImGui for the GUI.
-Supports rendering glTF models using either forward rendering or deferred rendering.
+Supports rasterized rendering of glTF models using either forward rendering or deferred rendering.
+It also supports ray-traced rendering through the `VK_KHR_ray_tracing_pipeline` extension, but this rendering path currently only implements ambient occlusion.
 
 This project is currently under active development.
 Once it becomes publicly available, I would strongly recommend checking out the project's [README](https://github.com/NeonSky/vulkan-renderer) for further details, visuals, and a list of supported features.
@@ -34,14 +35,14 @@ For now though, I would recommend reaching out to me personally for any question
 
 Master's thesis in computer science and engineering.
 A paper that demonstrates how latency-induced simulation errors, present in current state-of-the-art real-time interactive ocean simulations (due to asynchronous GPU readbacks), can be avoided without hurting performance.
-From investigating the state of the art, we found that the latency-induced simulation errors could negatively affect the long-term state of simulation by significant degrees.
-The framework that we propose to solve this issue integrates all parts of the simulation (ocean, wakes, and boats) on the GPU, effectively avoiding readbacks all together.
+From investigating the state of the art, we found that the latency-induced simulation errors could negatively affect the long-term state of the simulation by significant degrees.
+The framework that we propose to solve this issue integrates all parts of the simulation (ocean, wakes, and boats) on the GPU, effectively avoiding readbacks altogether.
 
 A prototype of our proposed framework was implemented in Unreal Engine 4.26, mainly using C++14 and HLSL-based custom compute shaders.
-All shaders were written to utilize the new Render Dependency Graph (RDG) and the Vulkan API was used as the backend.
+All shaders were written to utilize the new Render Dependency Graph (RDG) model in Unreal, and the Vulkan API was used as the backend.
 Additionally, Python was used for report-related data analysis and a C#/Unity project was built to measure the delays of asynchronous readbacks.
 
-The simulation itself is quite math-heavy and utilizes Digital Signal Processors (DSP) theory to a great extent in order to derive the Fourier transforms needed to continously convert the ocean between frequency space (for efficient animation) and world space (for user perception).
+The simulation itself is quite math-heavy and utilizes Digital Signal Processing (DSP) theory to a great extent in order to derive the Fourier transforms needed to continuously convert the ocean between frequency space (for efficient animation) and world space (for user perception).
 
 ![](images/master_thesis.png)
 ![](images/master_thesis2.png)
@@ -126,9 +127,9 @@ The engine relates objects in each scene with a scene hierarchy, such that child
 Among other things, this feature makes it simple to combine colored cubes into a (solvable) Rubik's cube.
 This scene hierarchy is combined with an ECS design so that arbitrary components can easily be attached to and detached from arbitrary objects (i.e. entities).
 
-The GoogleTest framework is used to write and run test, while Docker and Travis CI are used to automate the execution of these tests.
+The GoogleTest framework is used to write and run tests, while Docker and Travis CI are used to automate the execution of these tests.
 Documentation is written in the Doxygen format, which is then compiled to both Doxygen and Sphinx (through Breathe and Exhale) HTML-based API documentations.
-Clang-Format and Clang-Tidy and are used to format and automatically lint the code, respectively.
+Clang-Format and Clang-Tidy are used to format and automatically lint the code, respectively.
 
 Other notable tools include: EnTT for the ECS architecture, CMake for the build system, and Vcpkg for library dependencies.
 
@@ -151,8 +152,8 @@ All card images and attributes are fetched during runtime from [pokemontcg.io](h
 
 ![](images/tda362_course3.png)
 
-TDA362 is a computer graphics course project mainly concerned with physically based rendering (PBR) and coarsely covering a broad spectrum of other of other rendering topics (e.g. post-processing, particle effects, and shadow maps).
-I have also worked as paid teaching assistant in this course.
+TDA362 is a computer graphics course project mainly concerned with physically based rendering (PBR) and coarsely covering a broad spectrum of other rendering topics (e.g. post-processing, particle effects, and shadow maps).
+I have also worked as a paid teaching assistant in this course.
 
 The project is written in C++11, OpenGL, and GLSL.
 The build system is primarily based on CMake.
@@ -196,7 +197,7 @@ The website was hosted on AWS for development and on DigitalOcean for production
 
 Three games written in C# using the Unity game engine:
 - Geometric Tower Defense is a tower defense game with an online leaderboard that was backed by a MySQL database (through my personal website).
-- Disc Fighters is a local co-op twin stick shooter where your aim automatically rotates around you to the beat of the music and where discs (bullets) bounce on walls.
+- Disc Fighters is a local co-op twin-stick shooter where your aim automatically rotates around you to the beat of the music and where discs (bullets) bounce on walls.
 - Green and Blue is a puzzle platformer where the fabric of space is split into two non-interacting colors. Developed and submitted as an entry to Ludum Dare 32, where it received decent scores and pleasant reviews.
 
 ![](images/old_game_projects2.png)
