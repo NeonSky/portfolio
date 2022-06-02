@@ -65,8 +65,6 @@ Mainly worked with WebGL, GLSL, BabylonJS, TypeScript, and glTF.
 ![](images/ipex_viewer3.png)
 ![](images/ipex_viewer2.png)
 ![](images/ipex_viewer4.png)
-![](images/ipex_viewer5.png)
-![](images/ipex_viewer6.png)
 
 &nbsp;
 ## [MESRGAN: Mobile Enhanced Super-Resolution Generative Adversarial Network](https://github.com/NeonSky/computer-vision-MESRGAN)
