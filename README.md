@@ -16,6 +16,7 @@ The title of each project links to further details, which usually implies source
 Hobby 3D rendering engine written in Rust and Vulkan (Ash bindings).
 Used as a personal workbench for exploring various topics and ideas related to 3D Computer Graphics (3DCG) and the Vulkan API.
 It uses a render graph design for recording command buffers, an ECS design for managing objects in a scene, and Dear ImGui for the GUI.
+Supports rendering glTF models using either forward rendering or deferred rendering.
 
 This project is currently under active development.
 Once it becomes publicly available, I would strongly recommend checking out the project's [README](https://github.com/NeonSky/vulkan-renderer) for further details, visuals, and a list of supported features.
